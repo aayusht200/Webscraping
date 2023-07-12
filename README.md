@@ -14,3 +14,8 @@ with open(f'#path/filename.csv','w',newline='',encoding='UTF8')as f:   #setting 
  company_name_sample=jobs.find('h3', class_='joblist-comp-name').text.replace(' ','')  # storing data in specific objects
 
  writer.writerow(data) # storing the data
+
+#this loop is used to collect the data every 10 seconds
+while(True):
+    liveScrape()
+    time.sleep(10)
