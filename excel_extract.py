@@ -4,8 +4,9 @@ from bs4 import BeautifulSoup
 #link to be scraped
 html_text=requests.get('https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=Software+Engineer&txtLocation=new+york').text
 #creating a object variable for beautiful
+sample="new"
 header=['company_name','skill','date_posted','link_to_job']
-with open('LiveScrapping/posts/test.csv','w',newline='',encoding='UTF8')as f:
+with open(f'/Volumes/PortableSSD/TestScraping/LiveScrapping/posts/{sample}.csv','w',newline='',encoding='UTF8')as f:
     writer=csv.writer(f)
     writer.writerow(header)
     soup=BeautifulSoup(html_text,'lxml')
